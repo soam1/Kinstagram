@@ -7,4 +7,16 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="search">Search..</string>
+    <string name="username">username</string>
+    <string name="edit_profile">Edit Profile</string>
+    <string name="following">Following</string>
+    <string name="posts">Posts</string>
+    <string name="followers">Followers</string>
+    <string name="bio">Bio</string>
+    <string name="notifications">Notifications</string>
+    <string name="change_image">Change Image</string>
+    <string name="user_name">User name</string>
+    <string name="full_name">full name</string>
+    <string name="log_out">Log out</string>
+    <string name="delete_account">Delete account</string>
 </resources>

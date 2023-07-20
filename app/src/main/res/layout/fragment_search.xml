@@ -38,10 +38,10 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="6dp"
                     android:layout_marginEnd="15dp"
-                    android:textSize="20sp"
                     android:layout_toEndOf="@id/search_fragment_icon"
                     android:hint="@string/search"
-                    android:textColor="@color/colorPrimary" />
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="20sp" />
             </RelativeLayout>
 
 

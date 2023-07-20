@@ -13,30 +13,25 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
-    internal var selectedFragment: Fragment? = null
 
-//    private lateinit var textView: TextView
 
     private val onNavigationItemSelectedListener =
         BottomNavigationView.OnNavigationItemSelectedListener { item ->
             when (item.itemId) {
                 R.id.nav_home -> {
-//                    textView.text = "Home"
-//                moveToFragment(HomeFragment())
-//                    return@OnNavigationItemSelectedListener true
-                    selectedFragment = HomeFragment()
+                    moveToFragment(HomeFragment())
+                    return@OnNavigationItemSelectedListener true
+
                 }
 
                 R.id.nav_search -> {
-//                    textView.setText("Search")
-//                moveToFragment(SearchFragment())
-//                    return@OnNavigationItemSelectedListener true
-                    selectedFragment = SearchFragment()
+                    moveToFragment(SearchFragment())
+                    return@OnNavigationItemSelectedListener true
+
 
                 }
 
                 R.id.nav_add_post -> {
-//                    textView.setText("Add post")
                     item.isChecked = false
 //                startActivity(Intent(this@MainActivity, AddPostActivity::class.java))
                     return@OnNavigationItemSelectedListener true
@@ -45,26 +40,21 @@ class MainActivity : AppCompatActivity() {
                 }
 
                 R.id.nav_notifications -> {
-//                    textView.setText("Notifications")
-//                moveToFragment(NotificationsFragment())
-//                    return@OnNavigationItemSelectedListener true
-                    selectedFragment = NotificationsFragment()
+                    moveToFragment(NotificationsFragment())
+                    return@OnNavigationItemSelectedListener true
+
 
                 }
 
                 R.id.nav_profile -> {
-//                    textView.setText("Profile")
-//                moveToFragment(ProfileFragment())
-//                    return@OnNavigationItemSelectedListener true
-                    selectedFragment = ProfileFragment()
+                    moveToFragment(ProfileFragment())
+                    return@OnNavigationItemSelectedListener true
+
+
                 }
             }
 
-            if (selectedFragment != null) {
-                supportFragmentManager.beginTransaction()
-                    .replace(R.id.fragment_container, selectedFragment!!)
-                    .commit()
-            }
+
             false
         }
 
@@ -79,7 +69,14 @@ class MainActivity : AppCompatActivity() {
 
         navView.setOnNavigationItemSelectedListener(onNavigationItemSelectedListener)
 
-        supportFragmentManager.beginTransaction().replace(R.id.fragment_container, HomeFragment())
-            .commit()
+        moveToFragment(HomeFragment())
+
+
+    }
+
+    private fun moveToFragment(fragment: Fragment) {
+        val fragmentTrans = supportFragmentManager.beginTransaction()
+        fragmentTrans.replace(R.id.fragment_container, fragment)
+        fragmentTrans.commit()
     }
 }
