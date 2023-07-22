@@ -8,6 +8,7 @@ import android.view.View
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.akashsoam.instagramcloneapp.fragments.HomeFragment
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
@@ -30,7 +31,8 @@ class SignUpActivity : AppCompatActivity() {
 
 
         findViewById<View>(R.id.signin_link_btn).setOnClickListener {
-            startActivity(Intent(this, SignUpActivity::class.java))
+//            startActivity(Intent(this, SignInActivity::class.java))
+            finish()
         }
         findViewById<View>(R.id.signup_btn).setOnClickListener {
             createAccount()
@@ -76,7 +78,6 @@ class SignUpActivity : AppCompatActivity() {
                         run {
                             if (task.isSuccessful) {
                                 saveUserInfo(fullname, username, email, progressDialog)
-//                                progressDialog.dismiss()
 
                             } else {
                                 val message = task.exception.toString()
