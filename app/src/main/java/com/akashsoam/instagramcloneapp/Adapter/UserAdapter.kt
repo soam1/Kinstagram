@@ -6,9 +6,11 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
+import androidx.fragment.app.FragmentActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.akashsoam.instagramcloneapp.Model.User
 import com.akashsoam.instagramcloneapp.R
+import com.akashsoam.instagramcloneapp.fragments.ProfileFragment
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.database.DataSnapshot
@@ -44,6 +46,14 @@ class UserAdapter(
 
         checkFollowingStatus(user.getUid(), holder.userFollowButton)
 
+        holder.itemView.setOnClickListener {
+            val pref = mContext.getSharedPreferences("PREFS", Context.MODE_PRIVATE).edit()
+            pref.putString("profileId", user.getUid())
+            pref.apply()
+
+            (mContext as FragmentActivity).supportFragmentManager.beginTransaction()
+                .replace(R.id.fragment_container, ProfileFragment()).commit()
+        }
 
         holder.userFollowButton.setOnClickListener {
             if (holder.userFollowButton.text.toString() == "Follow") {
