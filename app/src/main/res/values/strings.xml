@@ -1,5 +1,5 @@
 <resources>
-<!--    <string name="app_name">InstagramCloneApp</string>-->
+    <!--    <string name="app_name">InstagramCloneApp</string>-->
     <string name="app_name">Instagramm</string>
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
@@ -27,4 +27,5 @@
     <string name="sign_up">Sign up</string>
     <string name="already_have_an_account_sign_in">Already have an account? Sign in</string>
     <string name="follow">Follow</string>
+    <string name="say_something_about_your_post">say something about your post</string>
 </resources>

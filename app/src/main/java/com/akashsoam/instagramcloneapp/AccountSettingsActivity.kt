@@ -146,7 +146,7 @@ class AccountSettingsActivity : AppCompatActivity() {
             progressDialog.show()
 
 
-            val fileRef = storageProfilePictureRef!!.child(firebaseUser.uid + " jpg")
+            val fileRef = storageProfilePictureRef!!.child(firebaseUser.uid + ".jpg")
             var uploadTask: StorageTask<*>
             uploadTask = fileRef.putFile(imageUri!!)
             uploadTask.continueWithTask<Uri?>(Continuation<UploadTask.TaskSnapshot, Task<Uri>> { task ->
