@@ -8,7 +8,6 @@ import android.view.View
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.akashsoam.instagramcloneapp.fragments.HomeFragment
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
@@ -69,7 +68,6 @@ class SignUpActivity : AppCompatActivity() {
                 progressDialog.setMessage("Registering..This may take some time")
                 progressDialog.setCanceledOnTouchOutside(false)
                 progressDialog.show()
-
 
 
                 val mAuth: FirebaseAuth = FirebaseAuth.getInstance()
