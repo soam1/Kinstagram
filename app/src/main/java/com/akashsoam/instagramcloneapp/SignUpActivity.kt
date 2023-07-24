@@ -118,6 +118,11 @@ class SignUpActivity : AppCompatActivity() {
                     Toast.LENGTH_SHORT
                 ).show()
 
+
+                FirebaseDatabase.getInstance().reference.child("follow").child(currentUserID)
+                    .child("following").child(currentUserID).setValue(true)
+
+
                 val intent = Intent(this@SignUpActivity, MainActivity::class.java)
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK)
                 startActivity(intent)
